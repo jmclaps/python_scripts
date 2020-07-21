@@ -6,6 +6,7 @@ import pandas as pd
 site = 'MLA'
 seller_id = '57995397'
 
+
 itemsVendedor = requests.get('https://api.mercadolibre.com/sites/'+site+'/search?seller_id='+seller_id)
 
 print(itemsVendedor.status_code)
