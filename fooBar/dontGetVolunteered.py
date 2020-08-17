@@ -52,3 +52,21 @@ def solution(src, dest):
             break
 
     return (response[0]-1)
+
+
+def getMoves(from: (int, int), to: (int, int), moves: [[(int, int)]]) -> [[(int, int)]]
+  if (from == to)
+    return moves
+  else
+    val validMoves = getValidMoves(from, moves)
+    return validMoves.map(move => getMoves(move, to, addMovement(from, moves)))
+
+
+# main
+val posibleSolutions = getMoves((0,1), (4,5), [[]])
+
+if (posibleSolutions.length == 0)
+  print("No solutions")
+else
+  val solution = posibleSolutions.sortBy((s1, s2) => s1.length < s2.length).head
+  print("Solution: ${solution}")
