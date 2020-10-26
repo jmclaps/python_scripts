@@ -1,0 +1,6 @@
+streamlit
+pandas
+pickle
+pandas
+matplotlib
+datetime
