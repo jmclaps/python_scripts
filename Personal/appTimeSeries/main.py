@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import datetime
+import joblib
 
 st.beta_set_page_config(layout="centered", initial_sidebar_state="expanded")
 
@@ -73,7 +74,8 @@ dataSetTrain = dataSet.loc[:'2018',['Cant']]
 dataSetTest = dataSet.loc['2019':, ['Cant']]
 
 if modelSelected == "SARIMA" and dataSelected == "Sedantes":
-    model = pkl.load(open('/Users/jclaps/dhds/ds_blend_students_2020/JMC/model_SARIMA.pkl','rb'))
+    model = joblib.load('./model_SARIMA.sav')
+    #model = pkl.load(open('/Users/fengod/python_scripts/Personal/appTimeSeries/model_SARIMA.pkl','rb'))
     st.sidebar.write("**Elige la cantidad de periodos a estimar**")
     nPeriods = st.sidebar.slider("",min_value=2,max_value=12)
     dynamic_forecast = model.predict(n_periods=nPeriods)

@@ -3,3 +3,8 @@
 **/.ipynb_checkpoints
 **/__pycache__
 **/*.pyc
+Personal/appTimeSeries/model_SARIMA.sav
+Personal/appTimeSeries/data_t4p.csv
+Personal/appTimeSeries/data_t4.csv
+Personal/appTimeSeries/data_sed.csv
+Personal/appTimeSeries/data_pip.csv
